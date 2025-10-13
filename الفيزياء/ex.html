@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="logo.png" type="image/png">
+  <title>اختبار الفصل الأول</title>
+  <style>
+    body {
+      font-family: "Cairo", sans-serif;
+      background-color: #f4f7fb;
+      color: #222;
+      line-height: 1.9;
+      direction: rtl;
+      padding: 30px;
+      margin: 0;
+    }
+
+    h1 {
+      text-align: center;
+      color: #0056b3;
+      font-size: 2.4rem;
+      margin-bottom: 25px;
+    }
+
+    .section {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      margin: 20px 0;
+      padding: 20px;
+      border-right: 6px solid #007bff;
+    }
+
+    .question {
+      margin-bottom: 20px;
+    }
+
+    .question p {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background-color: #0d6efd;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    button:hover {
+      background-color: #094da3;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 5px;
+    }
+
+    .correct {
+      background-color: #d4edda;
+      color: #155724;
+    }
+
+    .incorrect {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+
+    .review-link {
+      color: #0d6efd;
+      text-decoration: none;
+    }
+
+    .review-link:hover {
+      text-decoration: underline;
+    }
+
+    h3 a {
+      background-color: #0d6efd;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    h3 a:hover {
+      background-color: #094da3;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      textarea, input[type="text"] {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>اختبار الفصل الأول</h1>
+
+  <div class="section">
+    <form id="testForm">
+      <!-- السؤال 1 -->
+      <div class="question">
+        <p>1. ما هي الفيزياء؟</p>
+        <textarea id="q1" rows="4" placeholder="اكتب إجابتك هنا"></textarea>
+        <div id="result1" class="result"></div>
+      </div>
+
+      <!-- السؤال 2 -->
+      <div class="question">
+        <p>2. وصف البعض الفيزياء بأنها "البحث عن البساطة". اشرح لماذا قد يكون هذا الوصف مناسبًا.</p>
+        <textarea id="q2" rows="4" placeholder="اكتب إجابتك هنا"></textarea>
+        <div id="result2" class="result"></div>
+      </div>
+
+      <!-- السؤال 3 -->
+      <div class="question">
+        <p>3. إذا كانت نظريتان مختلفتان تصفان الملاحظات التجريبية بنفس الدقة، هل يمكن القول إن إحداهما أكثر صحة من الأخرى (بافتراض أن كلاهما يستخدم قواعد منطقية مقبولة)؟</p>
+        <textarea id="q3" rows="4" placeholder="اكتب إجابتك هنا"></textarea>
+        <div id="result3" class="result"></div>
+      </div>
+
+      <!-- السؤال 4 -->
+      <div class="question">
+        <p>4. ما الذي يحدد صحة النظرية؟</p>
+        <textarea id="q4" rows="4" placeholder="اكتب إجابتك هنا"></textarea>
+        <div id="result4" class="result"></div>
+      </div>
+
+      <!-- السؤال 5 -->
+      <div class="question">
+        <p>5. هل يجب أن تكون المعايير المطلوبة لتصديق قياس أو ملاحظة بنفس الصرامة بالنسبة لنتيجة متوقعة مقارنة بنتيجة غير متوقعة؟</p>
+        <textarea id="q5" rows="4" placeholder="اكتب إجابتك هنا"></textarea>
+        <div id="result5" class="result"></div>
+      </div>
+
+      <!-- السؤال 6 -->
+      <div class="question">
+        <p>6. هل يمكن أن تكون صحة النموذج محدودة، أم يجب أن تكون صحيحة عالميًا؟ كيف يقارن ذلك بصحة النظرية أو القانون؟</p>
+        <textarea id="q6" rows="4" placeholder="اكتب إجابتك هنا"></textarea>
+        <div id="result6" class="result"></div>
+      </div>
+
+      <!-- السؤال 7 -->
+      <div class="question">
+        <p>7. احسب رتبة المقدار للكميات الفيزيائية التالية:</p>
+        <p>(أ) كتلة الغلاف الجوي للأرض: 5.1 × 10¹⁸ كجم</p>
+        <p>(ب) كتلة الغلاف الجوي للقمر: 25000 كجم</p>
+        <p>(ج) كتلة المحيط المائي للأرض: 1.4 × 10²¹ كجم</p>
+        <p>(د) كتلة الأرض: 5.97 × 10²⁴ كجم</p>
+        <p>(هـ) كتلة القمر: 7.34 × 10²² كجم</p>
+        <p>(و) المسافة بين الأرض والقمر (المحور شبه الكبير): 3.84 × 10⁸ متر</p>
+        <p>(ز) متوسط المسافة بين الأرض والشمس: 1.5 × 10¹¹ متر</p>
+        <p>(ح) نصف قطر الأرض عند خط الاستواء: 6.38 × 10⁶ متر</p>
+        <p>(ط) كتلة الإلكترون: 9.11 × 10⁻³¹ كجم</p>
+        <p>(ي) كتلة البروتون: 1.67 × 10⁻²⁷ كجم</p>
+        <p>(ك) كتلة الشمس: 1.99 × 10³⁰ كجم</p>
+        <input type="text" id="q7a" placeholder="رتبة مقدار (أ)">
+        <input type="text" id="q7b" placeholder="رتبة مقدار (ب)">
+        <input type="text" id="q7c" placeholder="رتبة مقدار (ج)">
+        <input type="text" id="q7d" placeholder="رتبة مقدار (د)">
+        <input type="text" id="q7e" placeholder="رتبة مقدار (هـ)">
+        <input type="text" id="q7f" placeholder="رتبة مقدار (و)">
+        <input type="text" id="q7g" placeholder="رتبة مقدار (ز)">
+        <input type="text" id="q7h" placeholder="رتبة مقدار (ح)">
+        <input type="text" id="q7i" placeholder="رتبة مقدار (ط)">
+        <input type="text" id="q7j" placeholder="رتبة مقدار (ي)">
+        <input type="text" id="q7k" placeholder="رتبة مقدار (ك)">
+        <div id="result7" class="result"></div>
+      </div>
+
+      <!-- السؤال 8 -->
+      <div class="question">
+        <p>8. باستخدام رتب المقدار التي وجدتها في السؤال السابق، أجب عن الأسئلة التالية ضمن رتبة مقدار واحدة:</p>
+        <p>(أ) كم عدد الإلكترونات اللازمة لتساوي كتلة بروتون؟</p>
+        <p>(ب) كم عدد كواكب الأرض اللازمة لتساوي كتلة الشمس؟</p>
+        <p>(ج) كم عدد المسافات بين الأرض والقمر اللازمة لتغطية المسافة من الأرض إلى الشمس؟</p>
+        <p>(د) كم عدد أغلفة جوية للقمر اللازمة لتساوي كتلة الغلاف الجوي للأرض؟</p>
+        <p>(هـ) كم عدد أقمار اللازمة لتساوي كتلة الأرض؟</p>
+        <p>(و) كم عدد البروتونات اللازمة لتساوي كتلة الشمس؟</p>
+        <input type="text" id="q8a" placeholder="إجابة (أ)">
+        <input type="text" id="q8b" placeholder="إجابة (ب)">
+        <input type="text" id="q8c" placeholder="إجابة (ج)">
+        <input type="text" id="q8d" placeholder="إجابة (د)">
+        <input type="text" id="q8e" placeholder="إجابة (هـ)">
+        <input type="text" id="q8f" placeholder="إجابة (و)">
+        <div id="result8" class="result"></div>
+      </div>
+
+      <!-- السؤال 9 -->
+      <div class="question">
+        <p>9. كم عدد دقات القلب تقريبًا في حياة الإنسان؟</p>
+        <textarea id="q9" rows="4" placeholder="اكتب إجابتك هنا"></textarea>
+        <div id="result9" class="result"></div>
+      </div>
+
+      <!-- السؤال 10 -->
+      <div class="question">
+        <p>10. الجيل الواحد يساوي تقريبًا ثلث حياة الإنسان. كم عدد الأجيال التي مرت تقريبًا منذ سنة 0 ميلادية؟</p>
+        <textarea id="q10" rows="4" placeholder="اكتب إجابتك هنا"></textarea>
+        <div id="result10" class="result"></div>
+      </div>
+
+      <!-- السؤال 11 -->
+      <div class="question">
+        <p>11. كم مرة تقريبًا تكون حياة الإنسان أطول من متوسط عمر نواة ذرية غير مستقرة للغاية؟</p>
+        <textarea id="q11" rows="4" placeholder="اكتب إجابتك هنا"></textarea>
+        <div id="result11" class="result"></div>
+      </div>
+
+      <!-- السؤال 12 -->
+      <div class="question">
+        <p>12. احسب العدد التقريبي للذرات في بكتيريا، بافتراض أن متوسط كتلة الذرة في البكتيريا يساوي 10 أضعاف كتلة البروتون.</p>
+        <textarea id="q12" rows="4" placeholder="اكتب إجابتك هنا"></textarea>
+        <div id="result12" class="result"></div>
+      </div>
+
+      <!-- السؤال 13 -->
+      <div class="question">
+        <p>13. (أ) احسب عدد الخلايا في طائر طنان، بافتراض أن متوسط كتلة الخلية يساوي 10 أضعاف كتلة البكتيريا. (ب) بنفس الافتراض، كم عدد الخلايا في الإنسان؟</p>
+        <textarea id="q13" rows="4" placeholder="اكتب إجابتك هنا"></textarea>
+        <div id="result13" class="result"></div>
+      </div>
+
+      <!-- السؤال 14 -->
+      <div class="question">
+        <p>14. بافتراض أن نبضة عصبية واحدة يجب أن تنتهي قبل بدء أخرى، ما هو الحد الأقصى لمعدل إطلاق العصب بالنبضات في الثانية؟</p>
+        <textarea id="q14" rows="4" placeholder="اكتب إجابتك هنا"></textarea>
+        <div id="result14" class="result"></div>
+      </div>
+
+      <!-- السؤال 15 -->
+      <div class="question">
+        <p>15. كم عدد العمليات النقطية العائمة التي يمكن للحاسوب العملاق أن ينفذها كل عام تقريبًا؟</p>
+        <textarea id="q15" rows="4" placeholder="اكتب إجابتك هنا"></textarea>
+        <div id="result15" class="result"></div>
+      </div>
+
+      <!-- السؤال 16 -->
+      <div class="question">
+        <p>16. كم عدد العمليات النقطية العائمة التي يمكن للحاسوب العملاق أن ينفذها تقريبًا في حياة إنسان؟</p>
+        <textarea id="q16" rows="4" placeholder="اكتب إجابتك هنا"></textarea>
+        <div id="result16" class="result"></div>
+      </div>
+
+      <button type="submit">إرسال الإجابات</button>
+    </form>
+  </div>
+
+  <h3><a href="homepa.html">العودة إلى الصفحة الرئيسية</a></h3>
+
+  <script>
+    document.getElementById('testForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      let allCorrect = true;
+
+      // إجابات صحيحة مرجعية
+      const correctAnswers = {
+        q1: "الفيزياء هي العلم الذي يهتم بوصف التفاعلات بين الطاقة، المادة، الفضاء، والزمن لكشف الآليات الأساسية التي تقوم عليها كل ظاهرة.",
+        q3: "لا، لا يمكن القول إن إحدى النظريتين أكثر صحة من الأخرى. التجارب هي الحكم النهائي. إذا لم تقدم الأدلة التجريبية تفضيلًا لنظرية على أخرى، فكلاهما صحيح بنفس القدر.",
+        q5: "على الأرجح لا. كما يقال، 'الادعاءات الاستثنائية تتطلب أدلة استثنائية'.",
+        q7: {
+          a: "10¹⁹", b: "10⁴", c: "10²¹", d: "10²⁴", e: "10²²",
+          f: "10⁸", g: "10¹¹", h: "10⁶", i: "10⁻³¹", j: "10⁻²⁷", k: "10³⁰"
+        },
+        q8: {
+          a: "10³", b: "10⁵", c: "10²", d: "10¹⁵", e: "10²", f: "10⁵⁷"
+        },
+        q10: "10² أجيال",
+        q12: "10¹¹ ذرة",
+        q14: "10³ نبضات عصبية/ثانية",
+        q16: "10²⁶ عملية نقطية عائمة في حياة إنسان"
+      };
+
+      // دالة لتطبيع النصوص
+      function normalizeText(text) {
+        return text.trim().replace(/\s+/g, ' ').toLowerCase();
+      }
+
+      // دالة للتحقق من التشابه بين نصين
+      function isSimilarAnswer(userAnswer, correctAnswer) {
+        const user = normalizeText(userAnswer);
+        const correct = normalizeText(correctAnswer);
+        const userWords = user.split(' ');
+        const correctWords = correct.split(' ');
+        let matchCount = 0;
+        userWords.forEach(word => {
+          if (correctWords.includes(word)) matchCount++;
+        });
+        return matchCount / correctWords.length > 0.7; // نسبة تطابق 70%
+      }
+
+      // التحقق من إجابات الأسئلة النصية
+      function checkTextAnswer(qId, correctAnswer, resultId, reviewPage) {
+        const userAnswer = document.getElementById(qId).value;
+        const resultDiv = document.getElementById(resultId);
+        if (isSimilarAnswer(userAnswer, correctAnswer)) {
+          resultDiv.className = 'result correct';
+          resultDiv.innerHTML = 'إجابة صحيحة!';
+          return true;
+        } else {
+          resultDiv.className = 'result incorrect';
+          resultDiv.innerHTML = `إجابة خاطئة. راجع الموضوع في <a href="${reviewPage}" class="review-link">صفحة بناء النماذج</a>.`;
+          allCorrect = false;
+          return false;
+        }
+      }
+
+      // التحقق من إجابات الأسئلة العددية
+      function checkNumericAnswer(qId, correctAnswer, resultId, reviewPage) {
+        const userAnswer = normalizeText(document.getElementById(qId).value);
+        const resultDiv = document.getElementById(resultId);
+        if (userAnswer === normalizeText(correctAnswer)) {
+          resultDiv.className = 'result correct';
+          resultDiv.innerHTML = 'إجابة صحيحة!';
+          return true;
+        } else {
+          resultDiv.className = 'result incorrect';
+          resultDiv.innerHTML = `إجابة خاطئة. راجع الموضوع في <a href="${reviewPage}" class="review-link">صفحة مقياس الفيزياء</a>.`;
+          allCorrect = false;
+          return false;
+        }
+      }
+
+      // التحقق من جميع الإجابات
+      checkTextAnswer('q1', correctAnswers.q1, 'result1', 'Building_Models.html');
+      checkTextAnswer('q3', correctAnswers.q3, 'result3', 'Building_Models.html');
+      checkTextAnswer('q5', correctAnswers.q5, 'result5', 'Building_Models.html');
+      checkTextAnswer('q10', correctAnswers.q10, 'result10', 'index.html');
+      checkTextAnswer('q12', correctAnswers.q12, 'result12', 'index.html');
+      checkTextAnswer('q14', correctAnswers.q14, 'result14', 'index.html');
+      checkTextAnswer('q16', correctAnswers.q16, 'result16', 'index.html');
+
+      // السؤال 7: رتب المقدار
+      let q7Correct = true;
+      const q7Result = document.getElementById('result7');
+      ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'].forEach(letter => {
+        if (!checkNumericAnswer(`q7${letter}`, correctAnswers.q7[letter], 'result7', 'index.html')) {
+          q7Correct = false;
+        }
+      });
+      if (q7Correct) {
+        q7Result.className = 'result correct';
+        q7Result.innerHTML = 'إجابة صحيحة!';
+      } else {
+        allCorrect = false;
+      }
+
+      // السؤال 8: أسئلة رتب المقدار
+      let q8Correct = true;
+      const q8Result = document.getElementById('result8');
+      ['a', 'b', 'c', 'd', 'e', 'f'].forEach(letter => {
+        if (!checkNumericAnswer(`q8${letter}`, correctAnswers.q8[letter], 'result8', 'index.html')) {
+          q8Correct = false;
+        }
+      });
+      if (q8Correct) {
+        q8Result.className = 'result correct';
+        q8Result.innerHTML = 'إجابة صحيحة!';
+      } else {
+        allCorrect = false;
+      }
+
+      // الأسئلة المفتوحة بدون إجابات مرجعية
+      ['q2', 'q4', 'q6', 'q9', 'q11', 'q13', 'q15'].forEach(qId => {
+        const userAnswer = document.getElementById(qId).value;
+        const resultDiv = document.getElementById(`result${qId.slice(1)}`);
+        if (userAnswer.trim() === '') {
+          resultDiv.className = 'result incorrect';
+          resultDiv.innerHTML = `الرجاء إدخال إجابة. راجع الموضوع في <a href="${qId === 'q9' || qId === 'q11' || qId === 'q13' || qId === 'q15' ? 'index.html' : 'Building_Models.html'}" class="review-link">${qId === 'q9' || qId === 'q11' || qId === 'q13' || qId === 'q15' ? 'صفحة مقياس الفيزياء' : 'صفحة بناء النماذج'}</a>.`;
+          allCorrect = false;
+        } else {
+          resultDiv.className = 'result correct';
+          resultDiv.innerHTML = 'إجابة مقبولة (تحتاج إلى مراجعة يدوية).';
+        }
+      });
+
+      // حفظ حالة النجاح في localStorage
+      if (allCorrect) {
+        localStorage.setItem('chapter1Passed', 'true');
+        alert('تهانينا! لقد نجحت في اجتياز الفصل الأول. يمكنك الآن الوصول إلى الفصول الأخرى.');
+      } else {
+        alert('بعض الإجابات خاطئة. راجع الأخطاء وحاول مرة أخرى.');
+      }
+    });
+  </script>
+</body>
+</html>

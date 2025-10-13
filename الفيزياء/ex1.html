@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="logo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+  <title>باب اول کا امتحان</title>
+  <style>
+    body {
+      font-family: "Noto Nastaliq Urdu", sans-serif;
+      background-color: #f4f7fb;
+      color: #222;
+      line-height: 1.9;
+      direction: rtl;
+      padding: 30px;
+      margin: 0;
+    }
+
+    h1 {
+      text-align: center;
+      color: #0056b3;
+      font-size: 2.4rem;
+      margin-bottom: 25px;
+    }
+
+    .section {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      margin: 20px 0;
+      padding: 20px;
+      border-right: 6px solid #007bff;
+    }
+
+    .question {
+      margin-bottom: 20px;
+    }
+
+    .question p {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      margin-bottom: 10px;
+      font-family: "Noto Nastaliq Urdu", sans-serif;
+    }
+
+    button {
+      background-color: #0d6efd;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    button:hover {
+      background-color: #094da3;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 5px;
+    }
+
+    .correct {
+      background-color: #d4edda;
+      color: #155724;
+    }
+
+    .incorrect {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+
+    .review-link {
+      color: #0d6efd;
+      text-decoration: none;
+    }
+
+    .review-link:hover {
+      text-decoration: underline;
+    }
+
+    h3 a {
+      background-color: #0d6efd;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    h3 a:hover {
+      background-color: #094da3;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      textarea, input[type="text"] {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>باب اول کا امتحان</h1>
+
+  <div class="section">
+    <form id="testForm">
+      <!-- سوال 1 -->
+      <div class="question">
+        <p>1. طبیعیات کیا ہے؟</p>
+        <textarea id="q1" rows="4" placeholder="یہاں اپنا جواب لکھیں"></textarea>
+        <div id="result1" class="result"></div>
+      </div>
+
+      <!-- سوال 2 -->
+      <div class="question">
+        <p>2. کچھ لوگوں نے طبیعیات کو "سادگی کی تلاش" کے طور پر بیان کیا ہے۔ وضاحت کریں کہ یہ بیان کیوں مناسب ہو سکتا ہے۔</p>
+        <textarea id="q2" rows="4" placeholder="یہاں اپنا جواب لکھیں"></textarea>
+        <div id="result2" class="result"></div>
+      </div>
+
+      <!-- سوال 3 -->
+      <div class="question">
+        <p>3. اگر دو مختلف نظریات تجرباتی مشاہدات کو یکساں طور پر اچھی طرح بیان کرتے ہیں، تو کیا یہ کہا جا سکتا ہے کہ ایک دوسرے سے زیادہ درست ہے (یہ فرض کرتے ہوئے کہ دونوں منطقی قواعد کو قبول کرتے ہیں)؟</p>
+        <textarea id="q3" rows="4" placeholder="یہاں اپنا جواب لکھیں"></textarea>
+        <div id="result3" class="result"></div>
+      </div>
+
+      <!-- سوال 4 -->
+      <div class="question">
+        <p>4. نظریے کی درستگی کا تعین کس چیز سے ہوتا ہے؟</p>
+        <textarea id="q4" rows="4" placeholder="یہاں اپنا جواب لکھیں"></textarea>
+        <div id="result4" class="result"></div>
+      </div>
+
+      <!-- سوال 5 -->
+      <div class="question">
+        <p>5. کیا کسی پیمائش یا مشاہدے پر یقین کرنے کے لیے درکار معیارات کا اطلاق متوقع نتیجہ اور غیر متوقع نتیجہ کے لیے یکساں ہونا چاہیے؟</p>
+        <textarea id="q5" rows="4" placeholder="یہاں اپنا جواب لکھیں"></textarea>
+        <div id="result5" class="result"></div>
+      </div>
+
+      <!-- سوال 6 -->
+      <div class="question">
+        <p>6. کیا ماڈل کی درستگی محدود ہو سکتی ہے، یا اسے عالمی طور پر درست ہونا چاہیے؟ اس کا نظریے یا قانون کی درستگی سے موازنہ کیسے کیا جا سکتا ہے؟</p>
+        <textarea id="q6" rows="4" placeholder="یہاں اپنا جواب لکھیں"></textarea>
+        <div id="result6" class="result"></div>
+      </div>
+
+      <!-- سوال 7 -->
+      <div class="question">
+        <p>7. درج ذیل طبیعیاتی مقادیر کے لیے مقدار کا درجہ معلوم کریں:</p>
+        <p>(الف) زمین کے ماحول کی کمیت: 5.1 × 10¹⁸ کلوگرام</p>
+        <p>(ب) چاند کے ماحول کی کمیت: 25000 کلوگرام</p>
+        <p>(ج) زمین کے آبی دائرے کی کمیت: 1.4 × 10²¹ کلوگرام</p>
+        <p>(د) زمین کی کمیت: 5.97 × 10²⁴ کلوگرام</p>
+        <p>(ہ) چاند کی کمیت: 7.34 × 10²² کلوگرام</p>
+        <p>(و) زمین-چاند کا فاصلہ (نیم بڑا محور): 3.84 × 10⁸ میٹر</p>
+        <p>(ز) زمین-سورج کا اوسط فاصلہ: 1.5 × 10¹¹ میٹر</p>
+        <p>(ح) زمین کا استوائی رداس: 6.38 × 10⁶ میٹر</p>
+        <p>(ط) الیکٹران کی کمیت: 9.11 × 10⁻³¹ کلوگرام</p>
+        <p>(ی) پروٹون کی کمیت: 1.67 × 10⁻²⁷ کلوگرام</p>
+        <p>(ک) سورج کی کمیت: 1.99 × 10³⁰ کلوگرام</p>
+        <input type="text" id="q7a" placeholder="مقدار کا درجہ (الف)">
+        <input type="text" id="q7b" placeholder="مقدار کا درجہ (ب)">
+        <input type="text" id="q7c" placeholder="مقدار کا درجہ (ج)">
+        <input type="text" id="q7d" placeholder="مقدار کا درجہ (د)">
+        <input type="text" id="q7e" placeholder="مقدار کا درجہ (ہ)">
+        <input type="text" id="q7f" placeholder="مقدار کا درجہ (و)">
+        <input type="text" id="q7g" placeholder="مقدار کا درجہ (ز)">
+        <input type="text" id="q7h" placeholder="مقدار کا درجہ (ح)">
+        <input type="text" id="q7i" placeholder="مقدار کا درجہ (ط)">
+        <input type="text" id="q7j" placeholder="مقدار کا درجہ (ی)">
+        <input type="text" id="q7k" placeholder="مقدار کا درجہ (ک)">
+        <div id="result7" class="result"></div>
+      </div>
+
+      <!-- سوال 8 -->
+      <div class="question">
+        <p>8. پچھلے سوال میں پائی گئی مقدار کے درجوں کا استعمال کرتے ہوئے، درج ذیل سوالات کے جوابات ایک مقدار کے درجہ کے اندر دیں:</p>
+        <p>(الف) پروٹون کی کمیت کے برابر ہونے کے لیے کتنے الیکٹرانوں کی ضرورت ہوگی؟</p>
+        <p>(ب) سورج کی کمیت کے برابر ہونے کے لیے کتنی زمینوں کی ضرورت ہوگی؟</p>
+        <p>(ج) زمین سے سورج تک کے فاصلے کو پورا کرنے کے لیے کتنے زمین-چاند فاصلوں کی ضرورت ہوگی؟</p>
+        <p>(د) زمین کے ماحول کی کمیت کے برابر ہونے کے لیے چاند کے کتنے ماحولوں کی ضرورت ہوگی؟</p>
+        <p>(ہ) زمین کی کمیت کے برابر ہونے کے لیے کتنے چاندوں کی ضرورت ہوگی؟</p>
+        <p>(و) سورج کی کمیت کے برابر ہونے کے لیے کتنے پروٹونوں کی ضرورت ہوگی؟</p>
+        <input type="text" id="q8a" placeholder="جواب (الف)">
+        <input type="text" id="q8b" placeholder="جواب (ب)">
+        <input type="text" id="q8c" placeholder="جواب (ج)">
+        <input type="text" id="q8d" placeholder="جواب (د)">
+        <input type="text" id="q8e" placeholder="جواب (ہ)">
+        <input type="text" id="q8f" placeholder="جواب (و)">
+        <div id="result8" class="result"></div>
+      </div>
+
+      <!-- سوال 9 -->
+      <div class="question">
+        <p>9. انسانی زندگی میں دھڑکنوں کی تعداد تقریباً کتنی ہوتی ہے؟</p>
+        <textarea id="q9" rows="4" placeholder="یہاں اپنا جواب لکھیں"></textarea>
+        <div id="result9" class="result"></div>
+      </div>
+
+      <!-- سوال 10 -->
+      <div class="question">
+        <p>10. ایک نسل تقریباً انسانی زندگی کا تیسرا حصہ ہوتی ہے۔ سن 0 عیسوی سے اب تک تقریباً کتنی نسلیں گزری ہیں؟</p>
+        <textarea id="q10" rows="4" placeholder="یہاں اپنا جواب لکھیں"></textarea>
+        <div id="result10" class="result"></div>
+      </div>
+
+      <!-- سوال 11 -->
+      <div class="question">
+        <p>11. انسانی زندگی انتہائی غیر مستحکم ایٹمی نیوکلئس کے اوسط عمر سے تقریباً کتنی گنا لمبی ہوتی ہے؟</p>
+        <textarea id="q11" rows="4" placeholder="یہاں اپنا جواب لکھیں"></textarea>
+        <div id="result11" class="result"></div>
+      </div>
+
+      <!-- سوال 12 -->
+      <div class="question">
+        <p>12. بیکٹیریا میں ایٹموں کی تخمینی تعداد کا حساب لگائیں، یہ فرض کرتے ہوئے کہ بیکٹیریا میں ایٹم کی اوسط کمیت پروٹون کی کمیت سے 10 گنا زیادہ ہے۔</p>
+        <textarea id="q12" rows="4" placeholder="یہاں اپنا جواب لکھیں"></textarea>
+        <div id="result12" class="result"></div>
+      </div>
+
+      <!-- سوال 13 -->
+      <div class="question">
+        <p>13. (الف) ہمنگ برڈ میں خلیات کی تعداد کا حساب لگائیں، یہ فرض کرتے ہوئے کہ اوسط خلیے کی کمیت بیکٹیریا کی کمیت سے 10 گنا زیادہ ہے۔ (ب) اسی مفروضے کے تحت، انسان میں خلیات کی تعداد کتنی ہے؟</p>
+        <textarea id="q13" rows="4" placeholder="یہاں اپنا جواب لکھیں"></textarea>
+        <div id="result13" class="result"></div>
+      </div>
+
+      <!-- سوال 14 -->
+      <div class="question">
+        <p>14. یہ فرض کرتے ہوئے کہ ایک عصبی دھچکے کا خاتمہ دوسرے کے شروع ہونے سے پہلے ہونا چاہیے، اعصاب کا زیادہ سے زیادہ فائرنگ کی شرح فی سیکنڈ کتنی ہے؟</p>
+        <textarea id="q14" rows="4" placeholder="یہاں اپنا جواب لکھیں"></textarea>
+        <div id="result14" class="result"></div>
+      </div>
+
+      <!-- سوال 15 -->
+      <div class="question">
+        <p>15. ایک سپر کمپیوٹر ہر سال تقریباً کتنی فلوٹنگ پوائنٹ آپریشنز انجام دے سکتا ہے؟</p>
+        <textarea id="q15" rows="4" placeholder="یہاں اپنا جواب لکھیں"></textarea>
+        <div id="result15" class="result"></div>
+      </div>
+
+      <!-- سوال 16 -->
+      <div class="question">
+        <p>16. ایک سپر کمپیوٹر انسانی زندگی میں تقریباً کتنی فلوٹنگ پوائنٹ آپریشنز انجام دے سکتا ہے؟</p>
+        <textarea id="q16" rows="4" placeholder="یہاں اپنا جواب لکھیں"></textarea>
+        <div id="result16" class="result"></div>
+      </div>
+
+      <button type="submit">جوابات جمع کروائیں</button>
+    </form>
+  </div>
+
+  <h3><a href="homepa.html">مرکزی صفحہ پر واپسی</a></h3>
+
+  <script>
+    document.getElementById('testForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      let allCorrect = true;
+
+      // درست جوابات کا حوالہ
+      const correctAnswers = {
+        q1: "طبیعیات وہ سائنس ہے جو توانائی، مادہ، خلاء اور وقت کے تعاملات کو بیان کرنے سے متعلق ہے تاکہ ہر مظہر کے پیچھے بنیادی میکانزم کو کھولا جا سکے۔",
+        q3: "نہیں، یہ نہیں کہا جا سکتا کہ ایک نظریہ دوسرے سے زیادہ درست ہے۔ تجربات حتمی فیصلہ کرتے ہیں۔ اگر تجرباتی شواہد ایک نظریے کو دوسرے پر ترجیح نہیں دیتے، تو دونوں برابر درست ہیں۔",
+        q5: "غالبًا نہیں۔ جیسا کہ کہاوت ہے، 'غیر معمولی دعووں کے لیے غیر معمولی شواہد درکار ہوتے ہیں'۔",
+        q7: {
+          a: "10¹⁹", b: "10⁴", c: "10²¹", d: "10²⁴", e: "10²²",
+          f: "10⁸", g: "10¹¹", h: "10⁶", i: "10⁻³¹", j: "10⁻²⁷", k: "10³⁰"
+        },
+        q8: {
+          a: "10³", b: "10⁵", c: "10²", d: "10¹⁵", e: "10²", f: "10⁵⁷"
+        },
+        q10: "10² نسلیں",
+        q12: "10¹¹ ایٹم",
+        q14: "10³ عصبی دھچکے فی سیکنڈ",
+        q16: "انسانی زندگی میں 10²⁶ فلوٹنگ پوائنٹ آپریشنز"
+      };
+
+      // دالة لتطبيع النصوص
+      function normalizeText(text) {
+        return text.trim().replace(/\s+/g, ' ').toLowerCase();
+      }
+
+      // دالة للتحقق من التشابه بين نصين
+      function isSimilarAnswer(userAnswer, correctAnswer) {
+        const user = normalizeText(userAnswer);
+        const correct = normalizeText(correctAnswer);
+        const userWords = user.split(' ');
+        const correctWords = correct.split(' ');
+        let matchCount = 0;
+        userWords.forEach(word => {
+          if (correctWords.includes(word)) matchCount++;
+        });
+        return matchCount / correctWords.length > 0.7; // 70% تطابق
+      }
+
+      // نصي جوابات کی جانچ پڑتال
+      function checkTextAnswer(qId, correctAnswer, resultId, reviewPage, reviewPageText) {
+        const userAnswer = document.getElementById(qId).value;
+        const resultDiv = document.getElementById(resultId);
+        if (isSimilarAnswer(userAnswer, correctAnswer)) {
+          resultDiv.className = 'result correct';
+          resultDiv.innerHTML = 'درست جواب!';
+          return true;
+        } else {
+          resultDiv.className = 'result incorrect';
+          resultDiv.innerHTML = `غلط جواب۔ موضوع کا جائزہ لیں <a href="${reviewPage}" class="review-link">${reviewPageText}</a> پر۔`;
+          allCorrect = false;
+          return false;
+        }
+      }
+
+      // عددی جوابات کی جانچ پڑتال
+      function checkNumericAnswer(qId, correctAnswer, resultId, reviewPage, reviewPageText) {
+        const userAnswer = normalizeText(document.getElementById(qId).value);
+        const resultDiv = document.getElementById(resultId);
+        if (userAnswer === normalizeText(correctAnswer)) {
+          resultDiv.className = 'result correct';
+          resultDiv.innerHTML = 'درست جواب!';
+          return true;
+        } else {
+          resultDiv.className = 'result incorrect';
+          resultDiv.innerHTML = `غلط جواب۔ موضوع کا جائزہ لیں <a href="${reviewPage}" class="review-link">${reviewPageText}</a> پر۔`;
+          allCorrect = false;
+          return false;
+        }
+      }
+
+      // تمام جوابات کی جانچ پڑتال
+      checkTextAnswer('q1', correctAnswers.q1, 'result1', 'Building_Models.html', 'ماڈلز کی تعمیر کا صفحہ');
+      checkTextAnswer('q3', correctAnswers.q3, 'result3', 'Building_Models.html', 'ماڈلز کی تعمیر کا صفحہ');
+      checkTextAnswer('q5', correctAnswers.q5, 'result5', 'Building_Models.html', 'ماڈلز کی تعمیر کا صفحہ');
+      checkTextAnswer('q10', correctAnswers.q10, 'result10', 'index.html', 'طبیعیات کے پیمانے کا صفحہ');
+      checkTextAnswer('q12', correctAnswers.q12, 'result12', 'index.html', 'طبیعیات کے پیمانے کا صفحہ');
+      checkTextAnswer('q14', correctAnswers.q14, 'result14', 'index.html', 'طبیعیات کے پیمانے کا صفحہ');
+      checkTextAnswer('q16', correctAnswers.q16, 'result16', 'index.html', 'طبیعیات کے پیمانے کا صفحہ');
+
+      // سوال 7: مقدار کا درجہ
+      let q7Correct = true;
+      const q7Result = document.getElementById('result7');
+      ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'].forEach(letter => {
+        if (!checkNumericAnswer(`q7${letter}`, correctAnswers.q7[letter], 'result7', 'index.html', 'طبیعیات کے پیمانے کا صفحہ')) {
+          q7Correct = false;
+        }
+      });
+      if (q7Correct) {
+        q7Result.className = 'result correct';
+        q7Result.innerHTML = 'درست جواب!';
+      } else {
+        allCorrect = false;
+      }
+
+      // سوال 8: مقدار کے درجوں کے سوالات
+      let q8Correct = true;
+      const q8Result = document.getElementById('result8');
+      ['a', 'b', 'c', 'd', 'e', 'f'].forEach(letter => {
+        if (!checkNumericAnswer(`q8${letter}`, correctAnswers.q8[letter], 'result8', 'index.html', 'طبیعیات کے پیمانے کا صفحہ')) {
+          q8Correct = false;
+        }
+      });
+      if (q8Correct) {
+        q8Result.className = 'result correct';
+        q8Result.innerHTML = 'درست جواب!';
+      } else {
+        allCorrect = false;
+      }
+
+      // کھلے سوالات جن کے مرجع جوابات نہیں ہیں
+      ['q2', 'q4', 'q6', 'q9', 'q11', 'q13', 'q15'].forEach(qId => {
+        const userAnswer = document.getElementById(qId).value;
+        const resultDiv = document.getElementById(`result${qId.slice(1)}`);
+        if (userAnswer.trim() === '') {
+          resultDiv.className = 'result incorrect';
+          resultDiv.innerHTML = `براہ کرم جواب درج کریں۔ موضوع کا جائزہ لیں <a href="${qId === 'q9' || qId === 'q11' || qId === 'q13' || qId === 'q15' ? 'index.html' : 'Building_Models.html'}" class="review-link">${qId === 'q9' || qId === 'q11' || qId === 'q13' || qId === 'q15' ? 'طبیعیات کے پیمانے کا صفحہ' : 'ماڈلز کی تعمیر کا صفحہ'}</a> پر۔`;
+          allCorrect = false;
+        } else {
+          resultDiv.className = 'result correct';
+          resultDiv.innerHTML = 'جواب قابل قبول ہے (دستی جائزہ درکار ہے)۔';
+        }
+      });
+
+      // کامیابی کی حالت کو localStorage میں محفوظ کرنا
+      if (allCorrect) {
+        localStorage.setItem('chapter1Passed', 'true');
+        alert('مبارک ہو! آپ نے باب اول پاس کر لیا ہے۔ اب آپ دیگر ابواب تک رسائی حاصل کر سکتے ہیں۔');
+      } else {
+        alert('کچھ جوابات غلط ہیں۔ غلطیوں کا جائزہ لیں اور دوبارہ کوشش کریں۔');
+      }
+    });
+  </script>
+</body>
+</html>
